@@ -1,0 +1,79 @@
+{
+  "name": "cooper-fastify",
+  "version": "0.1.0",
+  "private": false,
+  "author": "Jan Oetjen <joetjen.riveting388@passmail.net> (http://joetjen.net)",
+  "description": "A Fastify plugin that loads an application's CASC configuration once, at startup, with cooper-config, and puts it on fastify.config -- the server's own options included.",
+  "homepage": "https://github.com/joetjen/node-cooper-fastify",
+  "type": "module",
+  "main": "./src/cooper-fastify.cjs",
+  "types": "./types/cooper-fastify.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/cooper-fastify.d.ts",
+      "import": "./src/cooper-fastify.js",
+      "require": "./src/cooper-fastify.cjs",
+      "default": "./src/cooper-fastify.cjs"
+    },
+    "./register": {
+      "import": "./src/register.js",
+      "require": "./src/register.cjs",
+      "default": "./src/register.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "types",
+    "guides"
+  ],
+  "license": "Apache-2.0",
+  "directories": {
+    "src": "./src"
+  },
+  "dependencies": {
+    "cooper": "file:../node-cooper",
+    "cooper-config": "file:../node-cooper-config",
+    "fastify-plugin": "^5.1.0"
+  },
+  "peerDependencies": {
+    "fastify": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "auto-changelog": "^2.6.0",
+    "chai": "^6.2.2",
+    "fastify": "^5.12.5",
+    "mocha": "^11.7.6",
+    "typedoc": "^0.28.20",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=9.0.0"
+  },
+  "scripts": {
+    "test": "npx mocha --recursive test/",
+    "autotest": "npx mocha --recursive --watch test/",
+    "typecheck": "npx tsc --checkJs --noEmit && npx tsc --noEmit -p test/types",
+    "precommit": "npm run typecheck && npm test",
+    "docs": "npx typedoc",
+    "version": "npx auto-changelog --package --template keepachangelog && git add CHANGELOG.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/joetjen/node-cooper-fastify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joetjen/node-cooper-fastify/issues",
+    "email": "joetjen.riveting388@passmail.net"
+  },
+  "keywords": [
+    "casc",
+    "cooper",
+    "config",
+    "configuration",
+    "fastify",
+    "fastify-plugin"
+  ]
+}
