@@ -49,7 +49,7 @@ jobs:
       - name: Move node-cooper-config beside this repository
         run: mv node-cooper-config ../node-cooper-config
 
-      # Linked, not copied: Node resolves its own `require('cooper')` from
+      # Linked, not copied: Node resolves its own `require('@joetjen/cooper')` from
       # its real path, so it needs a node_modules of its own.
       - name: Install node-cooper-config's dependencies
         run: npm ci --omit=dev --prefix ../node-cooper-config

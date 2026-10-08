@@ -16,8 +16,8 @@
  * units Fastify takes them in.
  */
 
-const cooperConfig = require('cooper-config');
-const { ModuleRef } = require('cooper');
+const cooperConfig = require('@joetjen/cooper-config');
+const { ModuleRef } = require('@joetjen/cooper');
 const { ensureLoaded } = require('./load.cjs');
 
 /** The block both read. */
@@ -40,7 +40,7 @@ const LISTEN = 'listen';
  * @param {import('../types/cooper-fastify.js').CooperFastifyOptions} [options]
  * @returns {Promise<Record<string, any>>} a fresh, mutable object; empty when there is no `fastify` block
  * @throws {TypeError} for an option cooper-config does not know
- * @throws {import('cooper-config').CooperConfigError} when the document does not load
+ * @throws {import('@joetjen/cooper-config').CooperConfigError} when the document does not load
  * @example
  *   const app = Fastify(await serverOptions({ modules: { 'App.RequestId': genReqId } }));
  */
@@ -57,7 +57,7 @@ async function serverOptions(options) {
  * exists, and by then `serverOptions()` or the plugin has loaded.
  *
  * @returns {Record<string, any>} a fresh, mutable object; empty when there is no such block
- * @throws {import('cooper-config').CooperConfigError} before anything is loaded
+ * @throws {import('@joetjen/cooper-config').CooperConfigError} before anything is loaded
  * @example
  *   await app.listen(listenOptions());
  */

@@ -10,7 +10,7 @@ Fastify has no configuration system of its own. This plugin takes the
 place of `@fastify/env` and of `dotenv`: `.env` files are read by
 [`cooper`](https://github.com/joetjen/node-cooper) itself. The loading
 and reading are [`cooper-config`](https://github.com/joetjen/node-cooper-config)'s,
-so `fastify.config.get(...)` and `require('cooper-config').get(...)` read
+so `fastify.config.get(...)` and `require('@joetjen/cooper-config').get(...)` read
 the same configuration.
 
 ```text
@@ -39,7 +39,7 @@ import "${COOPER_ENV}/*.casc"
 
 ```js
 import Fastify from 'fastify';
-import cooper, { serverOptions, listenOptions } from 'cooper-fastify';
+import cooper, { serverOptions, listenOptions } from '@joetjen/cooper-fastify';
 
 const app = Fastify(await serverOptions());   // loads config/config.casc, once
 await app.register(cooper);                   // fastify.config
@@ -52,7 +52,7 @@ await app.listen(listenOptions());
 ## Install
 
 ```sh
-npm install cooper-fastify
+npm install @joetjen/cooper-fastify
 ```
 
 `fastify` 5 is a peer dependency, so your own is used. `cooper-config`
@@ -178,11 +178,11 @@ When nothing reads the configuration before the plugin, registering it
 is enough. To load it before any of your code runs, preload it:
 
 ```sh
-node --import cooper-fastify/register app.js     # ES modules
-node --require cooper-fastify/register app.js    # CommonJS
+node --import @joetjen/cooper-fastify/register app.js     # ES modules
+node --require @joetjen/cooper-fastify/register app.js    # CommonJS
 ```
 
-Use `cooper-fastify/register` rather than `cooper-config/register`,
+Use `@joetjen/cooper-fastify/register` rather than `@joetjen/cooper-config/register`,
 because only this one registers `!file`. A document that does not load
 stops the process with its message and exit code 1.
 

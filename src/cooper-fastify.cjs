@@ -14,7 +14,7 @@
  * to feed and nothing to replace but `@fastify/env`, whose
  * `fastify.config` this takes the name of. The configuration itself is
  * `cooper-config`'s, loaded once and process-wide, so `fastify.config` and
- * a plain `require('cooper-config').get(...)` read the same thing.
+ * a plain `require('@joetjen/cooper-config').get(...)` read the same thing.
  *
  * It is wrapped with `fastify-plugin`: a configuration belongs to the
  * whole application, not to the encapsulation context that happened to
@@ -22,7 +22,7 @@
  */
 
 const fp = require('fastify-plugin');
-const cooperConfig = require('cooper-config');
+const cooperConfig = require('@joetjen/cooper-config');
 const { ensureLoaded } = require('./load.cjs');
 const { serverOptions, listenOptions } = require('./server-options.cjs');
 const { fileTag } = require('./file-tag.cjs');
@@ -60,7 +60,7 @@ async function cooperFastify(fastify, options) {
   fastify.decorate('config', reader);
 }
 
-const plugin = fp(cooperFastify, { name: 'cooper-fastify', fastify: '5.x' });
+const plugin = fp(cooperFastify, { name: '@joetjen/cooper-fastify', fastify: '5.x' });
 
 // The CommonJS module is the plugin, as Fastify's plugins are, with the
 // rest of the API on it. `default` and `cooperFastify` are the names a
