@@ -16,7 +16,7 @@
  */
 
 const path = require('node:path');
-const cooperConfig = require('cooper-config');
+const cooperConfig = require('@joetjen/cooper-config');
 const { fileTag, projectRoot } = require('./file-tag.cjs');
 
 /**
@@ -30,7 +30,7 @@ const FASTIFY_REGISTER_OPTIONS = ['prefix', 'logLevel', 'logSerializers'];
  * @param {Record<string, unknown>} [options] -- cooper-config's load options, Fastify's register options among them or not
  * @returns {void}
  * @throws {TypeError} for an option cooper-config does not know
- * @throws {import('cooper-config').CooperConfigError} when the document does not load
+ * @throws {import('@joetjen/cooper-config').CooperConfigError} when the document does not load
  */
 function ensureLoaded(options = {}) {
   const own = withoutFastifyOptions(options);

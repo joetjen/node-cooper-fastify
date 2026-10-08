@@ -51,14 +51,14 @@ describe('in a fresh process', () => {
     expect(JSON.parse(result.stdout)).to.deep.equal(['eu-west', 'KEY']);
   });
 
-  it('--import cooper-fastify/register loads it before the application, !file included', () => {
+  it('--import @joetjen/cooper-fastify/register loads it before the application, !file included', () => {
     const root = app();
     const result = run(root, 'app.mjs', ['--import', path.join(PACKAGE_ROOT, 'src', 'register.js')]);
     expect(result.stderr).to.equal('');
     expect(JSON.parse(result.stdout)).to.deep.equal(['eu-west', 'KEY']);
   });
 
-  it('--require cooper-fastify/register does the same for CommonJS', () => {
+  it('--require @joetjen/cooper-fastify/register does the same for CommonJS', () => {
     const root = app();
     const result = run(root, 'app.mjs', ['--require', path.join(PACKAGE_ROOT, 'src', 'register.cjs')]);
     expect(result.stderr).to.equal('');

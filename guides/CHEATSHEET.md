@@ -4,7 +4,7 @@
 
 ```js
 import Fastify from 'fastify';
-import cooper, { serverOptions, listenOptions } from 'cooper-fastify';
+import cooper, { serverOptions, listenOptions } from '@joetjen/cooper-fastify';
 
 const app = Fastify(await serverOptions(options?));   // loads, once
 await app.register(cooper);                           // fastify.config
@@ -12,8 +12,8 @@ await app.listen(listenOptions());
 ```
 
 ```sh
-node --import cooper-fastify/register app.js     # or preload: ESM
-node --require cooper-fastify/register app.js    # CJS
+node --import @joetjen/cooper-fastify/register app.js     # or preload: ESM
+node --require @joetjen/cooper-fastify/register app.js    # CJS
 ```
 
 ## When the configuration is loaded
@@ -23,7 +23,7 @@ node --require cooper-fastify/register app.js    # CJS
 | `register(cooper, options)` / `serverOptions(options)` | with `options`, always |
 | `register(cooper)` / `serverOptions()` | nothing if already loaded, else the defaults |
 | `listenOptions()` | never |
-| `cooper-fastify/register` | the defaults, before the application |
+| `@joetjen/cooper-fastify/register` | the defaults, before the application |
 
 | | |
 | --- | --- |

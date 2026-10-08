@@ -34,7 +34,7 @@ in its own right.
 - `src/server-options.cjs`: the `fastify` block for `Fastify()` and
   `listen()`, `!module` values resolved.
 - `src/file-tag.cjs`: the `!file` tag and the project root.
-- `src/register.{cjs,js}`: the `cooper-fastify/register` preload entry.
+- `src/register.{cjs,js}`: the `@joetjen/cooper-fastify/register` preload entry.
 - `types/cooper-fastify.d.ts`: the TypeScript declarations;
   `test/types/usage.ts` is compiled against them.
 - `test/`: one spec per concern, plus `test/support/project.js` for

@@ -2,7 +2,7 @@
 // application writes must type-check against `types/cooper-fastify.d.ts`.
 
 import Fastify from 'fastify';
-import cooper, { serverOptions, listenOptions, fileTag, version } from 'cooper-fastify';
+import cooper, { serverOptions, listenOptions, fileTag, version } from '@joetjen/cooper-fastify';
 
 const app = Fastify(await serverOptions({ modules: { 'App.RequestId': () => 'id' } }));
 await app.register(cooper, { root: '.', dotenv: false });

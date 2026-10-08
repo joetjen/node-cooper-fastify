@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import Fastify from 'fastify';
-import * as cooperConfig from 'cooper-config';
+import * as cooperConfig from '@joetjen/cooper-config';
 import cooper from '../src/cooper-fastify.js';
 import { project, cleanup, hermetic, HEADER } from './support/project.js';
 

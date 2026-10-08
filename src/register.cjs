@@ -1,17 +1,17 @@
 'use strict';
 
 /**
- * @fileoverview The preload entry: `node --import cooper-fastify/register`
+ * @fileoverview The preload entry: `node --import @joetjen/cooper-fastify/register`
  * (or `--require`) loads the configuration with its defaults before the
  * application's own code, `!file` included -- which is why it is not
- * `cooper-config/register`, whose load does not know the tag.
+ * `@joetjen/cooper-config/register`, whose load does not know the tag.
  *
  * A configuration that fails to load stops the process here, with the
  * error's message and exit code 1 rather than a stack trace: the trace
  * would point into this library, and what needs fixing is the document.
  */
 
-const { CooperConfigError } = require('cooper-config');
+const { CooperConfigError } = require('@joetjen/cooper-config');
 const { ensureLoaded } = require('./load.cjs');
 
 try {

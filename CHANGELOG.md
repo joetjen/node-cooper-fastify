@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+Published as **`@joetjen/cooper-fastify`**, beside `@joetjen/cooper`.
+
 ### Added
 
 - Project scaffold mirroring `node-cooper-config`: `package.json`
@@ -32,7 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   as UTF-8 text, relative to the project root or absolute, for Fastify's
   `https` options above all. An application's own `file` tag replaces
   it. Exported as `fileTag(root)`.
-- `cooper-fastify/register`, a preload entry for `--import`/`--require`
+- `@joetjen/cooper-fastify/register`, a preload entry for `--import`/`--require`
   that loads with the defaults, `!file` included, and exits with code 1
   and the error's message on failure.
 - TypeScript declarations: `fastify.config` is typed on
