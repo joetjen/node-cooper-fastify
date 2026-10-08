@@ -12,8 +12,9 @@ Published as **`@joetjen/cooper-fastify`**, beside `@joetjen/cooper`.
 ### Added
 
 - Project scaffold mirroring `node-cooper-config`: `package.json`
-  (Node.js 20+, `fastify` 5 as a peer dependency, `cooper-config`,
-  `cooper` and `fastify-plugin` as runtime dependencies), the dual
+  (Node.js 20+, `fastify` 5 as a peer dependency, `@joetjen/cooper-config`
+  ^0.1.0, `@joetjen/cooper` ^0.1.1 and `fastify-plugin` 6 as runtime
+  dependencies), the dual
   CJS/ESM entry-point convention, Mocha/Chai tests, `tsc --checkJs`
   type-checking, TypeDoc API docs, GitHub Actions for CI, docs and a
   monthly dependency audit, and the Apache License 2.0.

@@ -29,31 +29,6 @@ jobs:
             echo
           } > "$GITHUB_WORKSPACE/audit.txt"
 
-      # See ci.yml: `cooper` is a `file:../node-cooper` dependency.
-      - name: Check out node-cooper next to this repository
-        uses: actions/checkout@v4
-        with:
-          repository: joetjen/node-cooper
-          path: node-cooper
-
-      - name: Move node-cooper beside this repository
-        run: mv node-cooper ../node-cooper
-
-      # `cooper-config` is unpublished too: `file:../node-cooper-config`.
-      - name: Check out node-cooper-config next to this repository
-        uses: actions/checkout@v4
-        with:
-          repository: joetjen/node-cooper-config
-          path: node-cooper-config
-
-      - name: Move node-cooper-config beside this repository
-        run: mv node-cooper-config ../node-cooper-config
-
-      # Linked, not copied: Node resolves its own `require('@joetjen/cooper')` from
-      # its real path, so it needs a node_modules of its own.
-      - name: Install node-cooper-config's dependencies
-        run: npm ci --omit=dev --prefix ../node-cooper-config
-
       - name: Set up Node
         uses: actions/setup-node@v4
         with:

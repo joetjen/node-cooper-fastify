@@ -35,9 +35,9 @@
     "src": "./src"
   },
   "dependencies": {
-    "@joetjen/cooper": "file:../node-cooper",
-    "@joetjen/cooper-config": "file:../node-cooper-config",
-    "fastify-plugin": "^5.1.0"
+    "@joetjen/cooper": "^0.1.1",
+    "@joetjen/cooper-config": "^0.1.0",
+    "fastify-plugin": "^6.0.0"
   },
   "peerDependencies": {
     "fastify": "^5.0.0"
@@ -47,9 +47,9 @@
     "auto-changelog": "^2.6.0",
     "chai": "^6.2.2",
     "fastify": "^5.12.5",
-    "mocha": "^11.7.6",
+    "mocha": "^12.0.3",
     "typedoc": "^0.28.20",
-    "typescript": "^5.7.0"
+    "typescript": "~6.0"
   },
   "engines": {
     "node": ">=20.0.0",

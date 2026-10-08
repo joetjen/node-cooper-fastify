@@ -4,7 +4,7 @@ Instructions for AI agents working in this Node.js codebase.
 
 `cooper-fastify` is a Fastify plugin that loads an application's CASC
 configuration once, at startup, with
-[`cooper-config`](../node-cooper-config) (`node-cooper-config`), and
+[`@joetjen/cooper-config`](https://github.com/joetjen/node-cooper-config) (`node-cooper-config`), and
 puts it on `fastify.config`. It also hands the `fastify` block to the
 `Fastify()` factory through `serverOptions()`. It is the Fastify
 counterpart of the PHP framework adapters, `php-cooper-symfony` and
@@ -86,11 +86,8 @@ counterpart of the PHP framework adapters, `php-cooper-symfony` and
 
 ## Dependency boundaries
 
-- `cooper-config`, `cooper` and `fastify-plugin` are the runtime
-  dependencies; `fastify` is a peer. `cooper` and `cooper-config` are
-  unpublished, so `package.json` depends on them as
-  `file:../node-cooper` and `file:../node-cooper-config`. CI checks
-  both out next to this repository.
+- `@joetjen/cooper-config`, `@joetjen/cooper` and `fastify-plugin` are
+  the runtime dependencies, from npm; `fastify` is a peer.
 
 ## Git workflow, commits, versioning
 
