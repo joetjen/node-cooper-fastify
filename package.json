@@ -1,6 +1,6 @@
 {
   "name": "@joetjen/cooper-fastify",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -35,8 +35,8 @@
     "src": "./src"
   },
   "dependencies": {
-    "@joetjen/cooper": "^0.1.1",
-    "@joetjen/cooper-config": "^0.1.0",
+    "@joetjen/cooper": "^0.2.0",
+    "@joetjen/cooper-config": "^0.2.0",
     "fastify-plugin": "^6.0.0"
   },
   "peerDependencies": {

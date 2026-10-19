@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0] - 2026-10-19
+
+### Changed
+
+- Requires `@joetjen/cooper` 0.2 and `@joetjen/cooper-config` 0.2 (both
+  `^0.2.0`), so the application holds one `cooper` and a `ModuleRef`
+  from either is the same class. Nothing this package uses changed:
+  cooper 0.2 adds its `cooper` executable with the conformance adapter
+  and the CASC.md §9.5 error categories, and removes its old conformance
+  corpus, which this package never read.
+
 ## [0.1.0] - 2026-10-08
 
 Published as **`@joetjen/cooper-fastify`**, beside `@joetjen/cooper`.
