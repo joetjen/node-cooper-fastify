@@ -1,5 +1,11 @@
 # cooper-fastify
 
+> [!WARNING]
+> **Under heavy development: not for production use before `1.0.0`.**
+> Things can and will break, and the specification can and will change,
+> between any two releases until `1.0.0`. Do not use this library in a
+> production system yet.
+
 cooper-fastify is a [Fastify](https://fastify.dev) plugin that loads your
 application's [CASC](https://github.com/joetjen/cooper/blob/main/guides/casc/CASC.md)
 configuration once, at startup, and puts it on `fastify.config`. It also
